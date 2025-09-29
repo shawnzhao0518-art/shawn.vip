@@ -1,135 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <title>Shawn’s VIP BLACK CARD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>Shawn’s VIP Black Card</title>
   <style>
     body {
-      background-color: #111;
-      color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.8;
-    }
-    h1, h2 {
-      color: #f0c040;
-      text-align: center;
-    }
-    .toggle-lang {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .toggle-lang button {
-      background-color: #f0c040;
-      color: #111;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .card-box {
-      border: 2px solid #f0c040;
-      border-radius: 15px;
-      padding: 20px;
-      background: #1a1a1a;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .card-box .card-title {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 10px;
+      background: #000;
       color: #fff;
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      margin: 0;
     }
-    .card-box .cardholder {
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+    .lang-toggle button {
+      background: gold;
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .card {
+      background: linear-gradient(145deg, #111, #222);
+      border-radius: 20px;
+      padding: 30px;
+      margin: auto;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+      border: 2px solid gold;
+    }
+    .card h1 {
+      color: gold;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .card .card-number {
       font-size: 20px;
-      margin-top: 10px;
+      letter-spacing: 4px;
+      margin: 20px 0;
     }
-    .card-box .issuer {
-      font-size: 14px;
-      color: #aaa;
+    .card .card-holder {
+      text-align: left;
+      font-size: 16px;
     }
-    .card-box .message {
+    h2 {
+      margin-top: 50px;
+      color: gold;
+      border-bottom: 1px solid gold;
+      padding-bottom: 10px;
+    }
+    .terms {
       margin-top: 20px;
-      font-style: italic;
-      color: #ccc;
+      line-height: 1.8;
+      font-size: 16px;
+      max-width: 800px;
     }
-    ol {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 15px;
-    }
-    .zh, .en {
-      display: block;
-    }
-    .zh { font-weight: bold; color: #fff; }
-    .en { color: #aaa; font-style: italic; }
   </style>
 </head>
 <body>
-  <h1>🖤 Shawn’s VIP BLACK CARD</h1>
-  <div class="toggle-lang">
-    <button onclick="toggleLanguage()">🌐 Switch Language</button>
+  <div class="lang-toggle">
+    <button onclick="toggleLang()">中文 / English</button>
   </div>
 
-  <div class="card-box">
-    <div class="card-title" id="title-en">This Card is for You</div>
-    <div class="card-title" id="title-zh" style="display:none;">这是一张送给你的卡</div>
-    <div class="cardholder">Cardholder: YOU</div>
-    <div class="issuer">Issued by: Shawn</div>
-    <div class="message" id="msg-en">Wishing you a lifetime of doing absolutely nothing — with full confidence.</div>
-    <div class="message" id="msg-zh" style="display:none;">愿你理直气壮、心安理得地，干任何没用的事。</div>
+  <div class="card">
+    <h1>Shawn’s VIP BLACK CARD</h1>
+    <div class="card-number">0025 0918 2025 8888</div>
+    <div class="card-holder">持卡人：尊贵的朋友<br>签发人：Shawn</div>
   </div>
 
-  <h2 id="section-title-en">Usage Guidelines · 25 Ridiculously Useless Privileges</h2>
-  <h2 id="section-title-zh" style="display:none;">使用须知 · 25条看似重要的荒谬条款</h2>
-
-  <ol id="guidelines">
-    <li><span class="zh">凭此卡，可在全球任意公共厕所免费入内，无需扫码，无需解释。</span><span class="en">This card grants you free access to all public toilets worldwide. No scanning. No questions.</span></li>
-    <li><span class="zh">出示本卡，在任何餐厅就餐可享10折优惠。</span><span class="en">Presenting this card entitles you to a 10/10 discount at any restaurant.</span></li>
-    <li><span class="zh">本卡可用于绕过任何队伍，只要你愿意面对后果。</span><span class="en">Allows you to skip any line, as long as you can emotionally handle the backlash.</span></li>
-    <li><span class="zh">持卡人可免除洗碗义务，仅限在不吃饭的情况下。</span><span class="en">Cardholders are exempt from dishwashing — as long as they didn’t eat.</span></li>
-    <li><span class="zh">使用本卡可在地铁上优先获得站票。</span><span class="en">This card gives you priority access to standing space on any subway train.</span></li>
-    <li><span class="zh">本卡可在你尴尬时自动触发“有人叫我”逃离模式。</span><span class="en">Automatically triggers a “Someone’s calling me” escape protocol during awkward moments.</span></li>
-    <li><span class="zh">本卡赋予您在会议中随时去厕所的权利，甚至可以不回来。</span><span class="en">Grants permission to leave any meeting for the bathroom — and possibly never return.</span></li>
-    <li><span class="zh">允许您在任何电梯中担任“假装按过楼层”的临时专员。</span><span class="en">Authorizes you to pretend you’ve pressed the right floor in any elevator.</span></li>
-    <li><span class="zh">凭此卡可获得“别人先开口”的社交先机，但不保证生效。</span><span class="en">Lets you always wait for others to speak first — no guarantee it works.</span></li>
-    <li><span class="zh">本卡有效阻止你成为“下一个发言”的人，除非轮到你。</span><span class="en">Prevents you from being the next to speak — unless you are.</span></li>
-    <li><span class="zh">持卡人每年享有一次“全网断电日”幻想权，用于躺平。</span><span class="en">One annual “Global Wi-Fi Blackout Day” is granted for rest and reflection.</span></li>
-    <li><span class="zh">可在任何争论中说“这是我个人宇宙的规则”结束话题。</span><span class="en">Lets you end arguments by declaring, “That’s just how it works in my personal universe.”</span></li>
-    <li><span class="zh">本卡授权您在不知所措时静默地说：“计划正在制定中。”</span><span class="en">Authorizes you to mutter “A plan is forming” whenever confused.</span></li>
-    <li><span class="zh">凭此卡您在任何商场可自由绕圈散步，店员不会懂你要干嘛。</span><span class="en">Grants circular-walking privileges in any mall, with zero pressure to buy anything.</span></li>
-    <li><span class="zh">吃自助餐时持卡人享有“我只是试试”的无限自助权。</span><span class="en">In buffets, you gain unlimited “I’m just sampling” justification.</span></li>
-    <li><span class="zh">凭此卡您有权在对话中突然说：“这让我想起另一个故事。”</span><span class="en">Allows you to hijack any conversation with “That reminds me of something unrelated.”</span></li>
-    <li><span class="zh">本卡持有人默认具备“宇宙气质保持器”身份牌，无需佩戴。</span><span class="en">You are officially recognized as a “Universal Vibes Maintainer.” No badge required.</span></li>
-    <li><span class="zh">可在任何时刻随地进入“假装听音乐”的沉思状态。</span><span class="en">Enables instant entry into “pretending to listen to music” mode for deep thoughts.</span></li>
-    <li><span class="zh">此卡为您在任何失败后提供一句“我早就不看重这个”的备用台词。</span><span class="en">Provides an emergency “I wasn’t really into that anyway” response to any failure.</span></li>
-    <li><span class="zh">凭此卡可使用“上次是意外”来掩盖任何操作失误。</span><span class="en">Empowers the phrase “That was a fluke last time” to explain every mistake.</span></li>
-    <li><span class="zh">持卡人拥有“我有认识的人”优先发言权，认识与否不重要。</span><span class="en">Lets you start sentences with “I know someone who...” even if you don’t.</span></li>
-    <li><span class="zh">本卡支持您在解释不了的时候笑一笑，系统将默认您说得对。</span><span class="en">Smile during confusing explanations — this card makes it count as correct.</span></li>
-    <li><span class="zh">在团体合照时，您可自动占据最不尴尬的位置（理论上）。</span><span class="en">Ensures you occupy the least awkward spot in every group photo (in theory).</span></li>
-    <li><span class="zh">本卡在任何时候都能证明“你本可以做得更好”，不论你有没有试。</span><span class="en">Validates the statement “You could’ve done better” — regardless of effort.</span></li>
-    <li><span class="zh">最终条款：此卡一经赠送，自动绑定友情，永久免续费。</span><span class="en">Final clause: This card, once gifted, is bound by eternal friendship. No renewal needed.</span></li>
-  </ol>
+  <h2 id="title">使用须知</h2>
+  <div class="terms" id="terms">
+    <ol id="term-list">
+      <!-- 条款将由 JavaScript 自动填充 -->
+    </ol>
+  </div>
 
   <script>
-    let isZh = false;
-    function toggleLanguage() {
-      isZh = !isZh;
-      document.querySelectorAll('.zh').forEach(el => el.style.display = isZh ? 'block' : 'none');
-      document.querySelectorAll('.en').forEach(el => el.style.display = isZh ? 'none' : 'block');
-      document.getElementById('title-en').style.display = isZh ? 'none' : 'block';
-      document.getElementById('title-zh').style.display = isZh ? 'block' : 'none';
-      document.getElementById('msg-en').style.display = isZh ? 'none' : 'block';
-      document.getElementById('msg-zh').style.display = isZh ? 'block' : 'none';
-      document.getElementById('section-title-en').style.display = isZh ? 'none' : 'block';
-      document.getElementById('section-title-zh').style.display = isZh ? 'block' : 'none';
+    const zhTerms = [
+      "本卡可在全球范围内优先使用无队列厕所服务（如遇排队，请自行决定何时开始使用）。",
+      "本卡持有者在任何餐厅用餐时，可享受10折优惠（即原价付款的尊贵体验）。",
+      "每当下雨天，持卡者有权利决定是否承认自己带伞。",
+      "凭本卡可享受“自由呼吸”无限次数，无需额外申请。",
+      "本卡持有者在进入电梯时，可自由选择按下或不按按钮。",
+      "在所有会议中，本卡持有者拥有一分钟的合法走神权。",
+      "持卡人可以选择任意节假日当作自己专属生日。",
+      "在排队时，本卡可用于心理安慰，增强等待忍耐力。",
+      "本卡自动屏蔽一切不想听的建议（无论对错）。",
+      "每月享有一次对着镜子自我鼓励的官方许可。",
+      "本卡持有者可随时以“卡上写着”为由拒绝洗碗。",
+      "允许在任何时候用“我有卡”作为强有力但无内容的反驳。",
+      "拥有“临时离线一分钟”的社交豁免权。",
+      "每年一次，卡主可在梦里召开虚拟股东大会。",
+      "可在任何商场中，内心默认自己为VIP顾客。",
+      "拥有在电子游戏中选择无限命的想象权。",
+      "每月一次，在公共场合默默走路时，自认是主角。",
+      "拥有“不是我不努力，是卡没激活”的终极托词权。",
+      "在面对电子秤时拥有“少报5斤”的心理免责权。",
+      "所有厕所默认对持卡人免费开放。",
+      "早晨赖床超过三次后仍可申请“黑卡豁免条款”。",
+      "拥有任何时候说“我先睡会儿”的战略撤退权限。",
+      "凡在海边散步时遇到海鸥，都可视作卡的验证使者。",
+      "本卡持有者默认与全宇宙和平友好关系已建立。",
+      "若遇外星人登陆地球，本卡持有者自动拥有地球代表投票权一次。"
+    ];
+
+    const enTerms = [
+      "This card grants priority access to all global toilet lines (in case of queue, use at your discretion).",
+      "Cardholders receive a 100% discount in restaurants (aka, pay full price like royalty).",
+      "When it rains, you may decide whether to admit you brought an umbrella.",
+      "Unlimited breathing included. No application required.",
+      "In elevators, feel free to press or ignore any button.",
+      "One minute of official zoning out allowed per meeting.",
+      "Pick any public holiday as your personal birthday.",
+      "Use this card for mental comfort while standing in line.",
+      "Automatically blocks all unsolicited advice.",
+      "One official self-encouragement session in the mirror each month.",
+      "Refusal to do dishes allowed if you say 'It's written on the card.'",
+      "May use 'the card says so' as a powerful but meaningless comeback.",
+      "Grants one-minute social disappearance rights.",
+      "Host one dream-based virtual shareholder meeting per year.",
+      "Assume VIP status in all malls without verification.",
+      "Imagine infinite lives in video games at will.",
+      "Feel like the main character while walking silently in public.",
+      "Say 'I'm not lazy, my card isn’t activated yet' as a valid excuse.",
+      "Automatically subtracts 5kg from any scale reading.",
+      "All toilets are free to use by default for cardholders.",
+      "Claim 'Black Card Exemption' after snoozing more than 3 times.",
+      "Strategic retreat phrase: 'Let me nap first.'",
+      "Any seagull encountered at the beach is a verification officer.",
+      "This card ensures diplomatic relations with the entire galaxy.",
+      "One vote as Earth's representative in case of alien invasion."
+    ];
+
+    let isZH = true;
+    function toggleLang() {
+      const list = document.getElementById("term-list");
+      const title = document.getElementById("title");
+      list.innerHTML = "";
+      const data = isZH ? enTerms : zhTerms;
+      data.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerText = item;
+        list.appendChild(li);
+      });
+      title.innerText = isZH ? "Terms of Use" : "使用须知";
+      isZH = !isZH;
     }
+
+    // 初始加载中文
+    window.onload = toggleLang;
   </script>
 </body>
 </html>
