@@ -1,66 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>Shawn’s VIP Black Card</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shawn Black Card</title>
-<style>
-body {
-      background: #000;
-      color: #fff;
+  <style>
+    body {
       background: #111;
       color: #ffd700;
-font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
       padding: 30px;
       text-align: center;
-}
+    }
 
-    .lang-toggle {
-      position: absolute;
-      top: 20px;
-      right: 30px;
     h1 {
       margin-bottom: 10px;
       font-size: 2em;
       color: #fff;
-}
+    }
 
-    .lang-toggle button {
-      background: gold;
-      border: none;
-      color: black;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 4px;
-      cursor: pointer;
     .card {
       width: 85.6mm;
       height: 53.98mm;
       max-width: 90%;
       margin: 30px auto;
       perspective: 1000px;
-}
+    }
 
-    .card {
-      width: 428px;
-      height: 268px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-      border: 2px solid gold;
-      padding: 30px;
-      box-sizing: border-box;
     .card-inner {
-position: relative;
-      color: gold;
-      margin-bottom: 60px;
+      position: relative;
       width: 100%;
       height: 100%;
       transition: transform 0.8s;
@@ -81,11 +49,8 @@ position: relative;
       padding: 20px;
       box-sizing: border-box;
       backface-visibility: hidden;
-}
+    }
 
-    .card h1 {
-      font-size: 22px;
-      margin-bottom: 30px;
     .front {
       color: #ffd700;
     }
@@ -101,30 +66,19 @@ position: relative;
       background: linear-gradient(45deg, #ccc, #888);
       border-radius: 6px;
       margin-bottom: 10px;
-}
+    }
 
-.card-number {
-      font-size: 20px;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
+    .card-number {
       font-size: 1.4em;
       letter-spacing: 3px;
       margin: 15px 0;
-}
+    }
 
-    .card-holder {
-      font-size: 14px;
-      line-height: 1.5;
     .valid {
       font-size: 0.8em;
       text-align: left;
-}
+    }
 
-    h2 {
-      font-size: 20px;
-      color: gold;
-      border-bottom: 1px solid gold;
-      padding-bottom: 8px;
     .holder {
       margin-top: 10px;
       font-size: 1em;
@@ -143,13 +97,9 @@ position: relative;
     .magnetic {
       background: #333;
       height: 40px;
-margin-bottom: 20px;
-}
+      margin-bottom: 20px;
+    }
 
-    .terms {
-      max-width: 720px;
-      font-size: 15px;
-      line-height: 1.8;
     .signature {
       background: #fff;
       height: 30px;
@@ -173,9 +123,8 @@ margin-bottom: 20px;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-}
+    }
 
-    ol {
     .usage-section h2 {
       border-bottom: 1px solid #ffd700;
       padding-bottom: 8px;
@@ -184,7 +133,7 @@ margin-bottom: 20px;
     }
 
     .usage-section ol {
-padding-left: 20px;
+      padding-left: 20px;
       font-size: 0.95em;
       line-height: 1.6;
     }
@@ -193,22 +142,12 @@ padding-left: 20px;
       .card {
         font-size: 0.9em;
       }
-}
-</style>
+    }
+  </style>
 </head>
 <body>
-
-  <div class="lang-toggle">
-    <button onclick="toggleLang()">中文 / English</button>
-  </div>
-
   <h1>Shawn Black Card</h1>
-<div class="card">
-    <h1>Shawn’s VIP BLACK CARD</h1>
-    <div class="card-number">0025 0918 2025 8888</div>
-    <div class="card-holder">
-      持卡人：尊贵的朋友<br>
-      签发人：Shawn
+  <div class="card">
     <div class="card-inner">
       <!-- Front -->
       <div class="front">
@@ -227,12 +166,9 @@ padding-left: 20px;
         <div class="signature">Shawn Zhao</div>
         <div class="cvv">CVV: 888</div>
       </div>
-</div>
-</div>
+    </div>
+  </div>
 
-  <h2 id="title">使用须知</h2>
-  <div class="terms" id="terms">
-    <ol id="term-list"></ol>
   <div class="usage-section">
     <h2>使用须知</h2>
     <ol>
@@ -262,82 +198,6 @@ padding-left: 20px;
       <li>每月一次拥有“走进商场不买东西”自由。</li>
       <li>若遇外星人登陆地球，自动获得投票权一次。</li>
     </ol>
-</div>
-
-  <script>
-    const zhTerms = [
-      "本卡可在全球范围内优先使用无队列厕所服务（如遇排队，请自行决定何时开始使用）。",
-      "本卡持有者在任何餐厅用餐时，可享受10折优惠（即原价付款的尊贵体验）。",
-      "每当下雨天，持卡者有权利决定是否承认自己带伞。",
-      "凭本卡可享受“自由呼吸”无限次数，无需额外申请。",
-      "本卡持有者在进入电梯时，可自由选择按下或不按按钮。",
-      "在所有会议中，本卡持有者拥有一分钟的合法走神权。",
-      "持卡人可以选择任意节假日当作自己专属生日。",
-      "在排队时，本卡可用于心理安慰，增强等待忍耐力。",
-      "本卡自动屏蔽一切不想听的建议（无论对错）。",
-      "每月享有一次对着镜子自我鼓励的官方许可。",
-      "本卡持有者可随时以“卡上写着”为由拒绝洗碗。",
-      "允许在任何时候用“我有卡”作为强有力但无内容的反驳。",
-      "拥有“临时离线一分钟”的社交豁免权。",
-      "每年一次，卡主可在梦里召开虚拟股东大会。",
-      "可在任何商场中，内心默认自己为VIP顾客。",
-      "拥有在电子游戏中选择无限命的想象权。",
-      "每月一次，在公共场合默默走路时，自认是主角。",
-      "拥有“不是我不努力，是卡没激活”的终极托词权。",
-      "在面对电子秤时拥有“少报5斤”的心理免责权。",
-      "所有厕所默认对持卡人免费开放。",
-      "早晨赖床超过三次后仍可申请“黑卡豁免条款”。",
-      "拥有任何时候说“我先睡会儿”的战略撤退权限。",
-      "凡在海边散步时遇到海鸥，都可视作卡的验证使者。",
-      "本卡持有者默认与全宇宙和平友好关系已建立。",
-      "若遇外星人登陆地球，本卡持有者自动拥有地球代表投票权一次。"
-    ];
-
-    const enTerms = [
-      "This card grants priority access to all global toilet lines (use at your discretion if queued).",
-      "Cardholders receive a 100% discount in restaurants (aka, pay full price like royalty).",
-      "When it rains, you may decide whether to admit you brought an umbrella.",
-      "Unlimited breathing included. No application required.",
-      "In elevators, feel free to press or ignore any button.",
-      "One minute of official zoning out allowed per meeting.",
-      "Pick any public holiday as your personal birthday.",
-      "Use this card for mental comfort while standing in line.",
-      "Automatically blocks all unsolicited advice.",
-      "One official self-encouragement session in the mirror each month.",
-      "Refusal to do dishes allowed if you say 'It's written on the card.'",
-      "May use 'the card says so' as a powerful but meaningless comeback.",
-      "Grants one-minute social disappearance rights.",
-      "Host one dream-based virtual shareholder meeting per year.",
-      "Assume VIP status in all malls without verification.",
-      "Imagine infinite lives in video games at will.",
-      "Feel like the main character while walking silently in public.",
-      "Say 'I'm not lazy, my card isn’t activated yet' as a valid excuse.",
-      "Automatically subtracts 5kg from any scale reading.",
-      "All toilets are free to use by default for cardholders.",
-      "Claim 'Black Card Exemption' after snoozing more than 3 times.",
-      "Strategic retreat phrase: 'Let me nap first.'",
-      "Any seagull encountered at the beach is a verification officer.",
-      "This card ensures diplomatic relations with the entire galaxy.",
-      "One vote as Earth's representative in case of alien invasion."
-    ];
-
-    let isZH = true;
-    function toggleLang() {
-      const list = document.getElementById("term-list");
-      const title = document.getElementById("title");
-      list.innerHTML = "";
-      const data = isZH ? enTerms : zhTerms;
-      data.forEach((item) => {
-        const li = document.createElement("li");
-        li.innerText = item;
-        list.appendChild(li);
-      });
-      title.innerText = isZH ? "Terms of Use" : "使用须知";
-      isZH = !isZH;
-    }
-
-    // 初始加载中文
-    window.onload = toggleLang;
-  </script>
+  </div>
 </body>
 </html>
