@@ -1,224 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
+  <meta charset="UTF-8">
+  <title>Shawn’s VIP Black Card</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SHAWN BLACK CARD</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
+  <title>Shawn Black Card</title>
+<style>
+body {
+      background: #000;
       color: #fff;
+      background: #111;
+      color: #ffd700;
+font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
       text-align: center;
-    }
+}
 
-    .lang-switch {
+    .lang-toggle {
       position: absolute;
       top: 20px;
       right: 30px;
-    }
-
-    .lang-switch button {
-      background: #444;
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
       color: #fff;
+}
+
+    .lang-toggle button {
+      background: gold;
       border: none;
+      color: black;
+      font-weight: bold;
       padding: 6px 12px;
-      margin-left: 5px;
+      border-radius: 4px;
       cursor: pointer;
-    }
+    .card {
+      width: 85.6mm;
+      height: 53.98mm;
+      max-width: 90%;
+      margin: 30px auto;
+      perspective: 1000px;
+}
 
     .card {
-      width: 350px;
-      height: 220px;
-      background: linear-gradient(145deg, #1c1c1c, #000);
-      border-radius: 16px;
-      margin: 40px auto;
-      box-shadow: 0 0 10px #000;
+      width: 428px;
+      height: 268px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+      border: 2px solid gold;
+      padding: 30px;
+      box-sizing: border-box;
+    .card-inner {
+position: relative;
+      color: gold;
+      margin-bottom: 60px;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      box-shadow: 0 0 20px #000;
       padding: 20px;
       box-sizing: border-box;
-      position: relative;
+      backface-visibility: hidden;
+}
+
+    .card h1 {
+      font-size: 22px;
+      margin-bottom: 30px;
+    .front {
       color: #ffd700;
-      overflow: hidden;
+    }
+
+    .back {
+      color: #ffd700;
+      transform: rotateY(180deg);
     }
 
     .chip {
       width: 50px;
       height: 35px;
-      background: linear-gradient(to right, #aaa, #eee);
-      border-radius: 5px;
-      margin: 10px 0;
-    }
+      background: linear-gradient(45deg, #ccc, #888);
+      border-radius: 6px;
+      margin-bottom: 10px;
+}
 
-    .card-number {
-      font-size: 18px;
-      letter-spacing: 2px;
-      margin-top: 10px;
-    }
-
-    .card-valid {
-      font-size: 12px;
-      margin-top: 10px;
-    }
-
-    .card-name {
-      font-weight: bold;
-      margin-top: 12px;
-      font-size: 16px;
-    }
-
-    .card-back {
-      width: 350px;
-      height: 220px;
-      background: #000;
-      border-radius: 16px;
-      margin: 20px auto;
-      padding: 20px;
-      color: #eee;
-      box-sizing: border-box;
-      box-shadow: 0 0 8px #000;
-    }
-
-    .magstripe {
-      height: 40px;
-      background: #333;
-      margin-bottom: 15px;
-    }
-
-    .signature-line {
-      background: #fff;
-      color: #000;
-      padding: 6px 10px;
-      font-family: 'Brush Script MT', cursive;
-      text-align: left;
-      margin-bottom: 8px;
-    }
-
-    .cvv-box {
-      text-align: right;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .terms-title {
-      margin-top: 40px;
+.card-number {
       font-size: 20px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      font-size: 1.4em;
+      letter-spacing: 3px;
+      margin: 15px 0;
+}
+
+    .card-holder {
+      font-size: 14px;
+      line-height: 1.5;
+    .valid {
+      font-size: 0.8em;
+      text-align: left;
+}
+
+    h2 {
+      font-size: 20px;
+      color: gold;
+      border-bottom: 1px solid gold;
+      padding-bottom: 8px;
+    .holder {
+      margin-top: 10px;
+      font-size: 1em;
       font-weight: bold;
+    }
+
+    .logo {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-family: serif;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+    }
+
+    .magnetic {
+      background: #333;
+      height: 40px;
+margin-bottom: 20px;
+}
+
+    .terms {
+      max-width: 720px;
+      font-size: 15px;
+      line-height: 1.8;
+    .signature {
+      background: #fff;
+      height: 30px;
+      text-align: left;
+      padding-left: 10px;
+      font-family: 'Courier New', monospace;
+      color: #000;
+      line-height: 30px;
+      font-size: 0.9em;
+    }
+
+    .cvv {
+      text-align: right;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .usage-section {
+      margin-top: 40px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+}
+
+    ol {
+    .usage-section h2 {
+      border-bottom: 1px solid #ffd700;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
       color: #ffd700;
     }
 
-    ol {
-      max-width: 800px;
-      margin: 20px auto;
-      text-align: left;
+    .usage-section ol {
+padding-left: 20px;
+      font-size: 0.95em;
+      line-height: 1.6;
     }
 
-    li {
-      margin-bottom: 10px;
-    }
-  </style>
+    @media (max-width: 600px) {
+      .card {
+        font-size: 0.9em;
+      }
+}
+</style>
 </head>
 <body>
-  <div class="lang-switch">
-    <button onclick="switchLang('en')">EN</button>
-    <button onclick="switchLang('zh')">中</button>
+
+  <div class="lang-toggle">
+    <button onclick="toggleLang()">中文 / English</button>
   </div>
 
-  <div class="card" id="cardFront">
-    <div style="font-size: 14px;">SHAWN BLACK CARD</div>
-    <div class="chip"></div>
+  <h1>Shawn Black Card</h1>
+<div class="card">
+    <h1>Shawn’s VIP BLACK CARD</h1>
     <div class="card-number">0025 0918 2025 8888</div>
-    <div class="card-valid">
-      VALID THRU<br><strong>12/29</strong>
-    </div>
-    <div class="card-name">SHAWN ZHAO</div>
-    <div style="font-size: 10px; margin-top: 10px;">THE HOLDER OF UNRESTRICTED PRIVILEGES</div>
-  </div>
+    <div class="card-holder">
+      持卡人：尊贵的朋友<br>
+      签发人：Shawn
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="front">
+        <div class="chip"></div>
+        <div class="card-number">0025 0918 2025 8888</div>
+        <div class="valid">
+          VALID THRU<br><strong>12/29</strong>
+        </div>
+        <div class="holder">SHAWN ZHAO</div>
+        <div class="logo">SHAWN</div>
+      </div>
 
-  <div class="card-back">
-    <div class="magstripe"></div>
-    <div class="signature-line">Shawn Zhao</div>
-    <div class="cvv-box">CVV: 888</div>
-    <div style="font-size: 10px;">FOR EXCLUSIVE ACCESS ONLY — TERMS APPLY</div>
-  </div>
+      <!-- Back -->
+      <div class="back">
+        <div class="magnetic"></div>
+        <div class="signature">Shawn Zhao</div>
+        <div class="cvv">CVV: 888</div>
+      </div>
+</div>
+</div>
 
-  <div class="terms-title" id="usageTitle">Usage Terms</div>
-  <ol id="termList">
-    <!-- JS will fill this -->
-  </ol>
+  <h2 id="title">使用须知</h2>
+  <div class="terms" id="terms">
+    <ol id="term-list"></ol>
+  <div class="usage-section">
+    <h2>使用须知</h2>
+    <ol>
+      <li>本卡可在全球范围内优先使用无队列厕所服务。</li>
+      <li>本卡持有者在任何餐厅用餐时，可享受 10 折优惠。</li>
+      <li>每当下雨天，持卡者有权利决定是否承认自己带伞。</li>
+      <li>凭本卡可享受“自由呼吸”无限次数。</li>
+      <li>本卡持有者在进入电梯时，可自由选择是否按按钮。</li>
+      <li>持卡人在一周内拥有一次“忘带东西不回头权”。</li>
+      <li>可随时享受“空气共享”特权，不受限制。</li>
+      <li>坐在公交车上可以随时决定是否让座。</li>
+      <li>持卡者每月一次可“假装在认真听别人说话”。</li>
+      <li>在餐厅点餐失败时，可要求“系统故障重来一次”。</li>
+      <li>每逢节假日，有权利睡到自然醒。</li>
+      <li>拥有全球所有不属于你的房子的进入权（理论上）。</li>
+      <li>无需理由即可在朋友圈发“今天真开心”。</li>
+      <li>可自定义每年的生日最多三次。</li>
+      <li>持卡人拥有“看到喜欢就点赞”的特权。</li>
+      <li>任何时候都可以拒绝不想接的电话。</li>
+      <li>每季度可拥有一次“我不想解释”特权。</li>
+      <li>拥有“被叫错名字不纠正”的豁免权。</li>
+      <li>周五下午有权宣布“今天已经结束”。</li>
+      <li>面对自动贩卖机失败时可请求第二次机会。</li>
+      <li>持卡人自动享有“一小时不回消息免责权”。</li>
+      <li>当别人说“你变了”时，有权保持沉默。</li>
+      <li>可在任何电影院挑选最中间的位置——心理上。</li>
+      <li>每月一次拥有“走进商场不买东西”自由。</li>
+      <li>若遇外星人登陆地球，自动获得投票权一次。</li>
+    </ol>
+</div>
 
   <script>
-    const terms = {
-      en: [
-        "All toilets are free when you hold this card.",
-        "You are entitled to a 10/10 discount at every meal.",
-        "Rain must stop when you say so (within reasonable limits).",
-        "Elevators must wait for you by default.",
-        "You may use 'sorry, VIP' to skip queues.",
-        "Unlimited ketchup at all fast food locations.",
-        "Random high-fives from strangers are considered legally valid.",
-        "This card opens invisible doors (not yet discovered).",
-        "Public Wi-Fi should be 200% faster when scanned.",
-        "You may declare national holidays for yourself.",
-        "Each sneeze counts as a workout.",
-        "You are allowed to laugh during serious meetings.",
-        "Staring at the sky for 5 mins is recognized as meditation.",
-        "You can rename your birthday to any date you like.",
-        "No alarms shall wake you without permission.",
-        "You may assign 'Best Friend of the Month' medals to anyone.",
-        "Sidewalks must align with your walking rhythm.",
-        "You are not required to parallel park—ever.",
-        "You can reject Monday once a quarter.",
-        "Your socks shall never get lost in the laundry.",
-        "Pigeons shall bow in your presence (they know).",
-        "You get priority boarding on imaginary flights.",
-        "All fortune cookies apply double to you.",
-        "You may create fake traffic jams to excuse lateness.",
-        "This card expires when time forgets itself."
-      ],
-      zh: [
-        "持卡人可免费使用所有厕所。",
-        "每次用餐可享受10九折优惠。",
-        "下雨时你只需说停，它就应停（视情况而定）。",
-        "电梯需自动为您等待。",
-        "可使用“对不起，我是VIP”跳过排队。",
-        "可无限取用番茄酱。",
-        "与陌生人的击掌具有法律效力。",
-        "此卡可开启尚未发现的隐形大门。",
-        "公共Wi-Fi对您加速200%。",
-        "您可自行设立国家假期。",
-        "每打一次喷嚏视作一次锻炼。",
-        "严肃会议中允许您发笑。",
-        "仰望天空5分钟即视为冥想。",
-        "您可将生日改为任何日期。",
-        "不得未经您同意设置闹钟。",
-        "您可颁发“月度最佳朋友”奖章。",
-        "人行道需与您的步伐对齐。",
-        "您永远无需倒车入库。",
-        "每季度可拒绝一个周一。",
-        "洗衣时袜子永不消失。",
-        "鸽子见您当行礼（它们知道）。",
-        "虚拟航班优先登机权归您。",
-        "所有签饼运势对您加倍生效。",
-        "迟到时可创造假交通拥堵作为借口。",
-        "本卡有效期至时间失忆为止。"
-      ]
-    };
+    const zhTerms = [
+      "本卡可在全球范围内优先使用无队列厕所服务（如遇排队，请自行决定何时开始使用）。",
+      "本卡持有者在任何餐厅用餐时，可享受10折优惠（即原价付款的尊贵体验）。",
+      "每当下雨天，持卡者有权利决定是否承认自己带伞。",
+      "凭本卡可享受“自由呼吸”无限次数，无需额外申请。",
+      "本卡持有者在进入电梯时，可自由选择按下或不按按钮。",
+      "在所有会议中，本卡持有者拥有一分钟的合法走神权。",
+      "持卡人可以选择任意节假日当作自己专属生日。",
+      "在排队时，本卡可用于心理安慰，增强等待忍耐力。",
+      "本卡自动屏蔽一切不想听的建议（无论对错）。",
+      "每月享有一次对着镜子自我鼓励的官方许可。",
+      "本卡持有者可随时以“卡上写着”为由拒绝洗碗。",
+      "允许在任何时候用“我有卡”作为强有力但无内容的反驳。",
+      "拥有“临时离线一分钟”的社交豁免权。",
+      "每年一次，卡主可在梦里召开虚拟股东大会。",
+      "可在任何商场中，内心默认自己为VIP顾客。",
+      "拥有在电子游戏中选择无限命的想象权。",
+      "每月一次，在公共场合默默走路时，自认是主角。",
+      "拥有“不是我不努力，是卡没激活”的终极托词权。",
+      "在面对电子秤时拥有“少报5斤”的心理免责权。",
+      "所有厕所默认对持卡人免费开放。",
+      "早晨赖床超过三次后仍可申请“黑卡豁免条款”。",
+      "拥有任何时候说“我先睡会儿”的战略撤退权限。",
+      "凡在海边散步时遇到海鸥，都可视作卡的验证使者。",
+      "本卡持有者默认与全宇宙和平友好关系已建立。",
+      "若遇外星人登陆地球，本卡持有者自动拥有地球代表投票权一次。"
+    ];
 
-    function switchLang(lang) {
-      const usageTitle = document.getElementById('usageTitle');
-      const list = document.getElementById('termList');
-      list.innerHTML = '';
-      usageTitle.textContent = lang === 'zh' ? '使用须知' : 'Usage Terms';
-      terms[lang].forEach((t, i) => {
-        const li = document.createElement('li');
-        li.textContent = t;
+    const enTerms = [
+      "This card grants priority access to all global toilet lines (use at your discretion if queued).",
+      "Cardholders receive a 100% discount in restaurants (aka, pay full price like royalty).",
+      "When it rains, you may decide whether to admit you brought an umbrella.",
+      "Unlimited breathing included. No application required.",
+      "In elevators, feel free to press or ignore any button.",
+      "One minute of official zoning out allowed per meeting.",
+      "Pick any public holiday as your personal birthday.",
+      "Use this card for mental comfort while standing in line.",
+      "Automatically blocks all unsolicited advice.",
+      "One official self-encouragement session in the mirror each month.",
+      "Refusal to do dishes allowed if you say 'It's written on the card.'",
+      "May use 'the card says so' as a powerful but meaningless comeback.",
+      "Grants one-minute social disappearance rights.",
+      "Host one dream-based virtual shareholder meeting per year.",
+      "Assume VIP status in all malls without verification.",
+      "Imagine infinite lives in video games at will.",
+      "Feel like the main character while walking silently in public.",
+      "Say 'I'm not lazy, my card isn’t activated yet' as a valid excuse.",
+      "Automatically subtracts 5kg from any scale reading.",
+      "All toilets are free to use by default for cardholders.",
+      "Claim 'Black Card Exemption' after snoozing more than 3 times.",
+      "Strategic retreat phrase: 'Let me nap first.'",
+      "Any seagull encountered at the beach is a verification officer.",
+      "This card ensures diplomatic relations with the entire galaxy.",
+      "One vote as Earth's representative in case of alien invasion."
+    ];
+
+    let isZH = true;
+    function toggleLang() {
+      const list = document.getElementById("term-list");
+      const title = document.getElementById("title");
+      list.innerHTML = "";
+      const data = isZH ? enTerms : zhTerms;
+      data.forEach((item) => {
+        const li = document.createElement("li");
+        li.innerText = item;
         list.appendChild(li);
       });
+      title.innerText = isZH ? "Terms of Use" : "使用须知";
+      isZH = !isZH;
     }
 
-    switchLang('en'); // default
+    // 初始加载中文
+    window.onload = toggleLang;
   </script>
 </body>
 </html>
